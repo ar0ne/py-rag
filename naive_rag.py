@@ -36,16 +36,6 @@ vector_store = Chroma(
 ids = vector_store.add_documents(texts)
 
 
-# results = vector_store.similarity_search(
-#     'How many people are bitten by cats in the U.S. annually?',
-#     k=2
-# )
-
-# # Print Resulting Chunks
-# for res in results:
-#     print(f"* {res.page_content} [{res.metadata}]\n\n")
-
-
 # Set Chroma Vector Store as the Retriever
 retriever = vector_store.as_retriever()
 
@@ -72,6 +62,11 @@ answer: """
 
 custom_rag_prompt = PromptTemplate.from_template(prompt_template)
 
+####################################################################
+# This is Naive RAG, because we send user query directly to vector's store
+#
+#
+
 rag_chain = (
     {"context": retriever | format_docs, "query": RunnablePassthrough()}
     | custom_rag_prompt
@@ -79,8 +74,9 @@ rag_chain = (
     | StrOutputParser()
 )
 
+# Do you know how many people are bitten by cats in the U.S. every year?
 result = rag_chain.invoke(
-  "Do you know how many people are bitten by cats in the U.S. every year?"
+  "What is the purpose of life?"
 )
 
 print(result)

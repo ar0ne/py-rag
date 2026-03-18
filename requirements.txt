@@ -1,3 +1,7 @@
+flashrank
+langchain
+langchain-classic
+langchain-community
 langchain-chroma
 langchain-core
 langchain-google-genai
