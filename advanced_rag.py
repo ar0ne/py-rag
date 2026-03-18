@@ -94,7 +94,8 @@ answer: """
 custom_rag_prompt = PromptTemplate.from_template(prompt_template)
 
 
-query = "Do people often get bitten by cats in the US?"
+query = "Does cat have more bones than average human?"
+# query = "Is 10 more than 8?"
 
 # Advanced RAG: Pre-retrieval Query Rewrite
 retrival_query = rewrite_query(query, llm)
