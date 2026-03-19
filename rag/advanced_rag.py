@@ -8,7 +8,7 @@ from langchain_classic.retrievers import ContextualCompressionRetriever
 from langchain_community.document_compressors import FlashrankRerank
 
 
-load_dotenv()
+load_dotenv("../.env")
 
 
 with open("cat-facts.txt") as f:
