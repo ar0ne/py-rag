@@ -11,7 +11,7 @@ from langchain_core.runnables import RunnablePassthrough
 load_dotenv("../.env")
 
 
-with open("cat-facts.txt") as f:
+with open("../cat-facts.txt") as f:
     facts = f.read()
 
 
