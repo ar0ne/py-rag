@@ -14,3 +14,5 @@ trustcall
 langgraph-cli[inmem]
 python-dotenv>=1.2.0
 jupyter
+tavily-python>=0.7.13
+tavily>=1.1.0
